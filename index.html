@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Home</title>
+		<link rel="icon" href="images/favicon.ico">
+		<link rel="shortcut icon" href="images/favicon.ico" />
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/camera.css">
+		<link rel="stylesheet" href="css/form.css">
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-migrate-1.1.1.js"></script>
+		<script src="js/superfish.js"></script>
+		<script src="js/jquery.ui.totop.js"></script>
+		<script src="js/jquery.equalheights.js"></script>
+		<script src="js/jquery.easing.1.3.js"></script>
+		<script src="js/jquery.ui.totop.js"></script>
+		<script src="js/tms-0.4.1.js"></script>
+		<script>
+			$(document).ready(function(){
+				$('.slider_wrapper')._TMS({
+					show:0,
+					pauseOnHover:false,
+					prevBu:'.prev',
+					nextBu:'.next',
+					playBu:false,
+					duration:800,
+					preset:'fade',
+					pagination:true,//'.pagination',true,'<ul></ul>'
+					pagNums:false,
+					slideshow:8000,
+					numStatus:false,
+					banners: 'fade',
+					waitBannerAnimation:false,
+					progressBar:false
+				});
+			});
+			$(document).ready(function(){
+				!function(){
+			var map=[]
+			 ,names=[]
+			 ,win=$(window)
+			 ,header=$('header')
+			 ,currClass
+			$('.content').each(function(n){
+			 map[n]=this.offsetTop
+			 names[n]=$(this).attr('id')
+			})
+			win
+			 .on('scroll',function(){
+				var i=0
+				while(map[i++]<=win.scrollTop());
+				if(currClass!==names[i-2])
+				currClass=names[i-2]
+				header.removeAttr("class").addClass(names[i-2])
+			 })
+			}(); });
+					function goToByScroll(id){
+				$('html,body').animate({scrollTop: $("#"+id).offset().top+60},'slow');
+				}
+				$(document).ready(function(){
+					$().UItoTop({ easingType: 'easeOutQuart' });
+				});
+		</script>
+		<!--[if lt IE 8]>
+			<div style=' clear: both; text-align:center; position: relative;'>
+				<a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+					<img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+				</a>
+			</div>
+		<![endif]-->
+		<!--[if lt IE 9]>
+			<script src="js/html5shiv.js"></script>
+			<link rel="stylesheet" media="screen" href="css/ie.css">
+		<![endif]-->
+	</head>
+	<body class="">
+<!--==============================header=================================-->
+		<header class="page1">
+			<div class="container_12">
+				<div class="grid_12">
+					<h1><a href="#" onClick="goToByScroll('page1'); return false;"><img src="images/test.png"></a></h1>
+					<div class="menu_block">
+						<nav class="">
+							<ul class="sf-menu">
+								<li class="current men"><a onClick="goToByScroll('page1'); return false;" href="#">Preface</a> <strong class="hover"></strong></li>
+								<li class="men1"><a onClick="goToByScroll('page2'); return false;" href="#">Gini</a><strong class="hover"></strong></li>
+								<li class=" men2"><a onClick="goToByScroll('page3'); return false;" href="#">Income</a> <strong class="hover"></strong></li>
+								<li class=" men3"><a onClick="goToByScroll('page4'); return false;" href="#">Education</a> <strong class="hover"></strong></li>
+								<li class=" men4"><a onClick="goToByScroll('page5'); return false;" href="#">OLS</a> <strong class="hover"></strong></li>
+							</ul>
+						</nav>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</header>
+<!--=======content================================-->
+		<!-- Preface -->
+		<div id="page1" class="content">
+			<div class="container_12">
+				<div class="grid_12">
+					<div class="section">
+						<h3 id="projectTitle">Geospatial Analysis of Relationships, and Stratification on Socioeconomic Indicators in Michigan</h3>
+					</div>
+					<div class="text2">
+						There is an increasing concern over the economic dichotomies between peoples in the United States and it is often income inequality that takes the front-stage at protests, debates, and within the public conscience. This project evaluated the stratification of Michigan residents with regards to income inequality as measured by GINI coefficients and other socioeconomic factors. Included is a look into the effects of education on median household income. A supposition exists that, consequent to rising inequality and poor socioeconomic conditions, more people are electing to continue their education with the assumption it will aid them in resisting economic downturns. By looking at <a onClick="goToByScroll('page4'); return false;" href="#"><strong class="education">educational attainment</strong></a> and income together, it is possible to see if higher educational levels correlate to higher <a onClick="goToByScroll('page3'); return false;" href="#"><strong class="income">median income</strong></a>. Though a look at Michigan as a whole revealed interesting trends in spatial stratification, further analysis of Michigan’s most populous area has ascertained more detailed insight into the state’s current degree of inequality, and whether more education can offset its affects in one of the countries harshest markets.
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Gini -->
+		<div id="page2" class="content">
+			<div class="container_12">
+				<div class="grid_12">
+					<div class="section">
+						<h3>GINI INDEX</h3>
+					</div>
+				</div>
+				<div class="grid_8">
+					<img src="maps/mi_gini_stroked.png">
+					<a href="pdf/mi_counties_gini_2011.pdf"><button class="button ginibtn">Download</button></a>
+				</div>
+				<div class="grid_8">
+					<div class="text2">
+						Developed by Corrando Gini, the Gini coefficient (also referred to as the Gini index) is a measure of statistical dispersion that represents the extent of deviation of a nation’s income distribution from that of a perfectly equal distribution. A Gini coefficient of ‘0’ represents complete equality, while a coefficient of ‘1’ denotes absolute inequality. Data from the American Community Survey, published in 2011, is the most recent available on Michigan’s counties. It was joined to county vector data from the Michigan Geographic Data Library (MiGDL) in ArcMap and mapped.
+						<hr>
+						While studies have indicated that inequality is on the rise in all OECD nations, the United States continues at the head of the pack – with only Mexico surpassing it<sup>1</sup>. As of 2007, the CIA World Factbook placed the United States at a coefficient of 0.45<sup>2</sup>. It has been implied by the United Nations and its corroborators that a coefficient above 0.40 marks the boundary for a country’s risk of social unrest escalating<sup>3</sup>. With this figure in mind, the map on the left shows the quantity of counties that are above and below the ‘threshold’. The assumption is being made that the U.N. has empirical evidence to substantiate this concept.
+						<hr>
+						The findings show that approximately 84% (70/83) of Michigan counties are above a Gini coefficient of 0.40 and that many of the counties with the highest coefficients are home to large universities. Perhaps unsurprisingly, Metro Detroit is largely at the extreme end of inequality relative to the state as a whole. Initial assumptions could be made that higher coefficients in university counties can be attributed to students working while attending school. However, this has been accounted for; the data only includes peoples over the age of 25. In an effort to understand why inequality is occurring in this spatial pattern, this project next looked into <a onClick="goToByScroll('page3'); return false;" href="#"><span>Median Income</span></a>.
+					</div>
+				</div>
+				<div class="grid_8">
+					<img src="maps/mi_gini_040_stroked.png">
+					<a href="pdf/mi_counties_gini_040_2011.pdf"><button class="button ginibtn">Download</button></a>
+				</div>
+			</div>
+		</div>
+
+		<!-- Income -->
+		<div id="page3" class="content">
+			<div class="container_12">
+				<div class="grid_12">
+					<div class="section">
+						<h3>MEDIAN INCOME</h3>
+					</div>
+					<div class="grid_8">
+						<img src="maps/mi_income_stroked.png">
+						<a href="pdf/mi_counties_median_income_2013.pdf"><button class="button incomebtn">Download</button></a>
+					</div>
+					<div class="grid_8">
+						<div class="text2">
+							A median value is the literal dividing point between the upper and lower halves of a distribution. In this case, it is the distribution of income. As of 2013, the median household income of the United States was $52,250<sup>4</sup>. The U.S. Census Bureau typically measures median household income by including the income of the householder and each individual over the age of 15 within the household. However, to remain consistent, the maps shown here are limited to individuals over the age of 25. These data are from the American Community Survey 5-year study published in 2013. After being joined with MiGDL shapefiles, the figures were mapped with an equal interval classification focused on the U.S. median income value of 2013. To the left are the counties of MI, with a closer look at Metro Detroit – based on census tracts – on the right.
+							<hr>
+							Looking at Michigan’s counties, it is apparent that much of the state falls below the median income of the nation as a whole. This in-and-of-itself is not shocking considering that larger cities on the coasts will skew the distribution with higher incomes correlated with higher cost of living. What is notable is that, spatially, Metro Detroit and its periphery are where the higher values for median income are located. A closer look at the map on the right gives insight into why this area of Michigan also sees higher levels of inequality. There is an incredible dichotomy between the poorer city core and the affluent edge, tapering off into values moderately above the nation’s median income at the periphery. Since median income is such a large contributor toward Gini coefficients, this project continued with a look into <a onClick="goToByScroll('page4'); return false;" href="#"><span>Educational Attainment</span></a> to ascertain whether or not higher levels of education can abate the rising tide of inequality.
+						</div>
+					</div>
+					<div class="grid_8">
+						<img src="maps/detroit_income_stroked.png">
+						<a href="pdf/metro_detroit_median_income_2013.pdf"><button class="button incomebtn">Download</button></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Education -->
+		<div id="page4" class="content">
+			<div class="container_12">
+				<div class="grid_12">
+					<div class="section">
+						<h3>EDUATIONAL ATTAINMENT</h3>
+					</div>
+					<div class="grid_8">
+						<img src="maps/mi_education_stroked.png">
+						<a href="pdf/mi_counties_educational_attainment_2013.pdf"><button class="button educationbtn">Download</button></a>
+					</div>
+					<div class="grid_8">
+						<div class="text2">
+							According to the U.S. Census Bureau, their measure of educational attainment is the highest level of education completed by an individual and is separate from the level of education that is currently being attended<sup>5</sup>. Existing data from the American Community Survey was again joined with the necessary shapefiles and then analyzed using the attribute table field calculator. The summation of individuals holding an associate degree or greater was taken and then measured against the total population of those over the age of 25, resulting in the percentages reflected in these two maps. The values were classified using geometric interval to reach a balance between that of equal interval, quantile, and natural breaks.
+							<hr>
+							At first glance, it would appear that there is a similar pattern between median income and educational attainment. This is especially pronounced in the map of Metro Detroit’s census tracts; the core of the city falls on the lower end of both indicators with concentrations on the outer ring of both wealth and education. Visual interpretations, however, are not accurate measures of statistical certainty. In order to determine what relationship exists between these two indicators, if one exists at all, statistical regression needed to be performed. This led to analyzing the data under the <a onClick="goToByScroll('page5'); return false;" href="#"><span>Ordinary Least Squares</span></a> tool in ArcMap.
+						</div>
+					</div>
+					<div class="grid_8">
+						<img src="maps/detroit_education_stroked.png">
+						<a href="pdf/metro_detroit_educational_attainment_2013.pdf"><button class="button educationbtn">Download</button></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- OLS -->
+		<div id="page5" class="content">
+			<div class="container_12">
+				<div class="grid_12">
+					<div class="section">
+						<h3>ORDINARY LEAST SQUARES</h3>
+						<div class="grid_8">
+							<img src="maps/mi_ols_stroked.png">
+							<a href="pdf/mi_counties_ols.pdf"><button class="button olsbtn">PDF</button></a>
+							<a href="pdf/mi_counties_ols_report.pdf"><button class="button olsbtn">Report</button></a>
+						</div>
+						<div class="grid_8">
+							<div class="text2">
+								The final phase of this project looks at the statistical relationship between median income and educational attainment. Using ArcMap’s Ordinary Least Squares tool, median income was set at the dependent variable with educational attainment as the independent. The resulting maps show the standard deviations of the observed values from those predicted.
+								<hr>
+								The map of Michigan counties on the left indicates that few counties were outside a standard deviation of 1.5 in either direction. Again, the majority of census tracts are within 1.5 standard deviations in Metro Detroit. With marginal clustering in either map, there is likely additional variables affecting median income. This is especially confirmed in the OLS report for the Michigan counties map with an r-squared of 0.493. The Metro Detroit map, however, indicates a much stronger relationship with an r-squared of 0.728. It should be noted that both reports produced statistically significant (p&lt;0.01) values for the Jarque-Bera test. However, the bias is not in the distribution as both sets of data are relatively aligned with a normal distribution curve. The significant Jarque-Bera is due to <a href="https://en.wikipedia.org/wiki/Heteroscedasticity"><strong>heteroscedasticity</strong></a>, and is supported by the Koenker statistic being significant as well (p&lt;0.01). Observationally, this can be seen in the scatter plot where the lower values fit the regression line much better than higher counterparts.
+								<hr>
+								The significance is that, although the results break the assumption of non-heteroscedasticity, there is likely a correlation of higher median income resulting from more education until reaching the upper levels of either indicator, wherein education is not an accurate predictor of high income. This is likely due to the large range in income amongst the well-educated. Even if there is a positive relationship between the two indicators, it is not as strong as we are led to believe and more education does not lend protection against increasing inequality and a downturned economy.
+
+							</div>
+						</div>
+						<div class="grid_8">
+							<img src="maps/detroit_ols_stroked.png">
+							<a href="pdf/metro_detroit_ols.pdf"><button class="button olsbtn">PDF</button></a>
+							<a href="pdf/metro_detroit_ols_report.pdf"><button class="button olsbtn">Report</button></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+<!--==============================footer=================================-->
+		<footer>
+			<div class="container_12">
+				<div class="grid_12">
+					<div class="copy">
+						<font class="orangeText">BRANDON BEASLEY</font>
+						<br>
+						<strong>DATA SOURCE:</strong>
+						<br>
+						<a href="http://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml">U.S. Census Bureau, 5-Year American Community Survey 2013 | B19013 | B15003</a>
+						<br>
+						<strong>CITATIONS:</strong>
+						<br>
+						1. An Overview of Growing Income Inequalities in OECD Countries: Main Findings. (2011, January 1). Retrieved April 22, 2015, from <a href="https://www.oecd.org/els/soc/49499779.pdf">https://www.oecd.org/els/soc/49499779.pdf</a>
+						<br>
+						2. Country Comparison :: Distribution of Family Income - GINI Index. (n.d.). Retrieved April 29, 2015, from <a href="https://www.cia.gov/library/publications/the-world-factbook/rankorder/2172rank.html">https://www.cia.gov/library/publications/the-world-factbook/rankorder/2172rank.html</a>
+						<br>
+						3. Inequalities and the Post-2015 Development Agenda A Concept Note. (2014). United Nations Research Institute for Social Development. Retrieved April 21, 2015, from <a href="http://www.un.org/en/development/desa/policy/untaskteam_undf/groupb_unrisd_inequality.pdf">http://www.un.org/en/development/desa/policy/untaskteam_undf/groupb_unrisd_inequality.pdf</a>
+						<br>
+						4. Noss, A. (2014). Household Income: 2013. American Community Survey Briefs, 13(2). Retrieved April 21, 2015, from <a href="https://www.census.gov/content/dam/Census/library/publications/2014/acs/acsbr13-02.pdf">https://www.census.gov/content/dam/Census/library/publications/2014/acs/acsbr13-02.pdf</a>
+						<br>
+						5. About Educational Attainment. (2010, September 22). Retrieved April 19, 2015, from <a href="http://www.census.gov/hhes/socdemo/education/about/index.html">http://www.census.gov/hhes/socdemo/education/about/index.html</a>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</footer>
+	</body>
+</html>
